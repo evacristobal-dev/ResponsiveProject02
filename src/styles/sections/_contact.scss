@@ -1,0 +1,141 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+section.contact {
+    padding: 40px 16px;
+    background-color: v.$color-dark-grey;
+    margin-bottom: 40px;
+    position: relative;
+    @include m.respond(tablet) {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+    @include m.respond(desktop) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .contact-container {
+        @include m.respond(desktop) {
+            display: flex;
+            justify-content: space-between;
+         }
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            @include m.respond(desktop) {
+                flex-basis: 40%;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            h1 {
+                color: v.$color-white;
+                font-family: v.$primary-font;
+                font-size: 35px;
+                font-weight: 500;
+                @include m.respond(tablet) {
+                    font-size: 60px;
+                    font-weight: 700;
+                }
+                @include m.respond(desktop) {
+                    text-align: left;
+                }
+            }
+
+            p {
+                color: v.$color-white;
+                font-family: v.$primary-font;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 28px;
+                letter-spacing: 0.04em;
+                text-align: center;
+                @include m.respond(desktop) {
+                    text-align: left;
+                }
+            }
+        }
+
+        .contact-form {
+            @include m.respond(desktop) {
+                flex-basis: 40%;
+            }
+
+                
+            input {
+                background-color: transparent;
+                color: v.$color-light-grey;
+                font-size: 16px;
+                border:none;     
+                outline: none;     
+                box-shadow: none; 
+                margin-top: 20px;
+                margin-bottom: 16px;
+                padding-left: 16px;
+            }
+            
+            textarea {
+                background-color: transparent;
+                color: v.$color-light-grey;
+                font-size: 16px;
+                border:none;      
+                outline: none;     
+                box-shadow: none;
+                text-shadow: none;
+                overflow: hidden;
+                appearance: none;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-left: 16px;
+                resize: none;
+            }
+
+            hr {
+                border: 1px solid white;
+                transition: border-color .3s ease;
+            }
+
+            input:focus + hr, textarea:focus + hr {
+                border-color: v.$color-green;
+            }
+
+            .hr-message {
+                margin-bottom: 30px;
+            }
+
+            .container-send-message {
+                display: flex;
+                justify-content: flex-end;
+
+                .send-message {
+                @include m.link();
+                }
+            }
+        }
+    }
+
+    .oval-contact-figure {
+        position: absolute;
+        bottom: -10px;
+        left: -150px;
+        z-index: 1;
+        @include m.respond(tablet) {
+            bottom: -10px;
+            left: -130px;
+        }
+        @include m.respond(desktop) {
+            bottom: -10px;
+            left: -80px;
+        }
+
+        .oval-contact-img {
+            width: 80%;
+            height: auto;
+        }
+    }    
+}

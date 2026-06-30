@@ -1,0 +1,40 @@
+@use 'variables' as v;
+
+//
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: v.$bp-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-horizontal {
+    @media (min-width: v.$bp-tablet-horizontal) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: v.$bp-desktop) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-xl {
+    @media (min-width: v.$bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+// link 
+@mixin link() {
+  color: v.$color-white;
+  font-family: v.$primary-font;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 2.286px;
+  text-decoration: none;
+  border-bottom: 2px solid v.$color-green;
+  padding-bottom: 7px;
+  @include respond(desktop) {
+    &:hover {
+      color: v.$color-green;
+    }
+  }
+}

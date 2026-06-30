@@ -1,0 +1,15 @@
+@use "../abstracts/mixins" as m;
+
+.container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include m.respond(tablet) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    @include m.respond(desktop) {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+}

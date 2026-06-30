@@ -1,0 +1,120 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// Projects
+section.projects {
+    margin-bottom: 80px;
+    @include m.respond(tablet) {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .header-projects {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+
+        h1 {
+            font-size: 40px;
+            @include m.respond(tablet) {
+                font-size: 45px;
+            }
+        }
+
+        a.contact-me {
+            @include m.link();
+        }
+    }
+
+    // Mobile
+    
+    .projects-article {
+        margin-bottom: 50px;
+
+        @include m.respond(desktop) {
+                position: relative; 
+                
+                &:hover {
+                    .project-img {
+                        filter: brightness(20%);
+                    }
+
+                    .links {
+                        display: flex;
+                        position: absolute;
+                        top: 40%;
+                        left: 15%;
+                        z-index: 1;
+                    }
+                }
+            }
+
+        figure {
+            div.container-img {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include m.respond(desktop) {
+                    align-items: flex-start;
+                    justify-content: left;
+                }
+            }
+
+            .project-img {
+                    width: 100%;
+                    max-width: 400px;
+                    height: auto;
+                    margin-bottom: 15px;
+                    @include m.respond(desktop) {
+                        text-align: left;
+                    }
+                }            
+
+            figcaption {
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 32px; 
+            }
+        }
+        
+        .project-languages {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            gap: 30px;
+
+            a.view-project {
+            @include m.link();
+            }
+            a.view-code {
+                @include m.link();
+            }
+
+            @include m.respond(desktop) {
+                display: none;
+            } 
+        }
+    }
+
+
+    // Tablet & Desktop
+    .container-grid-projects {
+        @include m.respond(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+
+            @include m.respond(tablet) {
+                justify-content: space-between;
+            }
+        }        
+    }
+}

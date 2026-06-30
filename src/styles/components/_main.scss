@@ -1,0 +1,71 @@
+@use "../abstracts/mixins" as m;
+
+main {
+    .container-main {
+        position: relative;
+
+        .oval-hero-figure {
+            position: absolute;
+            top: -10px;
+            left: -250px;
+            z-index: 1;     
+
+            .oval-hero-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .circle-hero-figure {
+            position: absolute;
+            top: 130px;
+            right: -15px;
+            z-index: 1;
+            @include m.respond(tablet) {
+                top: 270px;
+                right: -15px;
+                z-index: 3;
+            }
+            @include m.respond(desktop) {
+                display: none;
+            }
+
+            .circle-hero-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .circle-hero-desktop-figure {
+            display: none;
+            @include m.respond(desktop) {
+                display: block;
+                position: absolute;
+                top: 230px;
+                right: 15px;
+                z-index: 3;
+
+            }
+        }
+
+        .oval-languages-figure {
+            position: absolute;
+            top: 1180px;
+            right: -130px;
+            z-index: 1;
+            @include m.respond(tablet) {
+                top: 680px;
+            }
+            @include m.respond(desktop) {
+                top: 550px;
+            }
+
+            .oval-languages-img {
+                width: 100%;
+                height: auto;
+            }
+        }    
+    }
+}
+
+
