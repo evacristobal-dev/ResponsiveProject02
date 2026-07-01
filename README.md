@@ -1,6 +1,6 @@
 # 💼 Personal Web Portfolio
 
-A responsive personal portfolio website designed to showcase my projects, skills, and experience. The website is optimized for mobile, tablet, and desktop devices, ensuring a seamless browsing experience across all screen sizes.
+A responsive personal portfolio website designed to showcase projects, skills, and experience. The website is optimized for mobile, tablet, and desktop devices, ensuring a seamless browsing experience across all screen sizes.
 
 ## 🌐 Live Demo
 
